@@ -22,12 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             if ($result && $result->num_rows === 1) {
                 $user = $result->fetch_assoc();
                 $hashedPassword = $user['user_password'];
-
-                if (password_verify($inputPassword, $hashedPassword)) {
+		    
+                if (password_verify($inputPassword, $hashedPassword)) {  /*in this code we added a subsequent conditional statement which is use for checking the input value of ($user['user_type'] if the user signup and login is a student or instructor.*/ 
                     $_SESSION['user_id'] = $user['id'];
-                    if ($user['user_type'] === 'student') {
+                    if ($user['user_type'] === 'student') { /*If the user type is 'student', the redirect('view.php') function is called, which redirects the user to the 'view.php' page.*/
                         redirect('view.php');
-                    } elseif ($user['user_type'] === 'instructor') {
+                    } elseif ($user['user_type'] === 'instructor') {  /*If the user type is 'instructor', the redirect('dash.php') function is called, which redirects the user to the 'dash.php' page.*/
                         redirect('dash.php');
                     }
                 }
