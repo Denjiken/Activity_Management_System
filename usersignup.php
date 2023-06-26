@@ -19,7 +19,8 @@ function random_string($length) {
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $userType = $_POST['user_type'];
+    $userType = $_POST['user_type']; /* In this code we added a POST method so that When the form is submitted, the value entered in the "user_type" field will be accessed using the $_POST['user_type'] expression. This value will then be assigned to the $userType variable for further processing or usage in our PHP code.
+if the user enters "student" in the "user_type" field and submits the form, the value "student" will be assigned to the $userType variable, same as if the user input "instructor" as a user type */
 
     if (!empty($username) && !empty($password)) {
         // Check if the username already exists
