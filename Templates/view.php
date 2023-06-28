@@ -47,7 +47,7 @@ function viewActivities() {
     <div class="view-activities-container">
         <h1>View Activities</h1>
         <div style="text-align: right;">
-            <form action="userlogin.php" method="POST">
+            <form action="index.php" method="POST">
                 <button type="submit" style="background-color: red; color: white; border: none; padding: 10px; cursor: pointer;">Logout</button>
             </form>
         </div>

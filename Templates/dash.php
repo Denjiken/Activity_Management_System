@@ -200,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ?>
 
     <div class="logout">
-        <a href="userlogin.php">Logout</a>
+        <a href="index.php">Logout</a>
     </div>
 </body>
 </html>

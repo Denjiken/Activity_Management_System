@@ -19,8 +19,7 @@ function random_string($length) {
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $userType = $_POST['user_type']; /* In this code we added a POST method so that When the form is submitted, the value entered in the "user_type" field will be accessed using the $_POST['user_type'] expression. This value will then be assigned to the $userType variable for further processing or usage in our PHP code.
-if the user enters "student" in the "user_type" field and submits the form, the value "student" will be assigned to the $userType variable, same as if the user input "instructor" as a user type */
+    $userType = $_POST['user_type'];
 
     if (!empty($username) && !empty($password)) {
         // Check if the username already exists
@@ -71,7 +70,7 @@ if the user enters "student" in the "user_type" field and submits the form, the 
             $stmt->close();
 
             $successMessage = "Success! You can now sign in.";
-            header("refresh:3; url=userlogin.php"); // Redirect after 3 seconds
+            header("refresh:1; url=index.php"); // Redirect after 1 seconds
         }
     } else {
         $warning = "The information is not valid.";
@@ -167,7 +166,7 @@ if the user enters "student" in the "user_type" field and submits the form, the 
             <input type="radio" name="user_type" value="instructor"> Instructor
             <button type="submit">Sign Up</button><br>
             <label>Already have an account?</label>
-            <a href="userlogin.php" style="color: #D31C32;">Login</a>
+            <a href="index.php" style="color: #D31C32;">Login</a>
         </form>
     </div>
 </body>
